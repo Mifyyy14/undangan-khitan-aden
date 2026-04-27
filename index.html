@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Undangan Walimatul Khitan Diendra Maulana Syakir">
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <title>Walimatul Khitan - Diendra Maulana Syakir</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<!-- Audio Background -->
+<audio id="bgMusic" loop preload="auto" style="display: none;">
+    <source src="assets/audio/Musik1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Loading Indicator -->
+<div id="loadingIndicator" class="hidden" style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(212, 175, 55, 1);
+    color: #0F0F0F;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    z-index: 1002;
+    text-align: center;
+    font-weight: bold;
+">
+    <div style="width: 2rem; height: 2rem; border: 3px solid #0F0F0F; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+    Memproses data...
+</div>
+
+<!-- Main Pages Container -->
+<div class="pages-wrapper" id="pagesWrapper">
+
+    <!-- PAGE 1: COVER -->
+    <div class="page full-page active" id="page-1">
+        <div class="page-bg" style="background: url('assets/images/bg_utama2.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+        
+
+
+        <div class="opening-content" data-aos="fade-up" data-aos-delay="200">
+            <span class="badge-khitan">
+                <i class="fas fa-leaf mr-2"></i> UNDANGAN <i class="fas fa-leaf ml-2"></i>
+            </span>
+
+
+
+            <h1 class="font-playfair" style="color: var(--white);">Walimatul Khitan</h1>
+                <div class="opening-profile" data-aos="zoom-in">
+                    <div class="profile-circle">
+                        <img src="assets/images/profile_child.png" alt="Diendra Maulana Syakir">
+                    </div>
+                </div>
+            <h2 class="font-playfair">Diendra Maulana Syakir</h2><br>
+
+            <p class="opening-desc">
+                Dengan segala kerendahan hati dan syukur kepada Allah SWT, <br> kami mengundang Anda merayakan momen istimewa putra kami
+            </p>
+
+            <button onclick="startInvitation()" class="btn-primary btn-large">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>BUKA UNDANGAN</span>
+            </button>
+        </div>
+
+
+    </div>
+
+    <!-- PAGE 2: PROFIL -->
+    <div class="page full-page" id="page-2">
+        <div class="page-bg" style="background: url('assets/images/bg_utama7.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">Assalamu'alaikum Wr Wb</h2>
+                <p class="page-subtitle">Tanpa mengurangi rasa hormat kami bermaksud<br>mengundang Bapak/Ibu/Saudara/I pada acara<br> walimatul khitan anak kami:</p>
+            </div>
+
+            <div class="page-body">
+                <div class="profile-grid" data-aos="fade-up">
+                    <!-- Foto -->
+                    <div class="profile-photo" data-aos="fade-right">
+                        <div class="profile-frame">
+                            <img src="assets/images/profile_child.png" alt="Diendra Maulana Syakir">
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="profile-info" data-aos="fade-left">
+                        <h3 class="font-playfair" style="text-align: center;">Diendra Maulana Syakir<br>(Aden)</h3>
+    
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <img src="assets/images/Mother.png" class="icon" style="width: 100px; height:100px; object-fit:contain;" alt="family-icon">
+                                </div>
+                                <p class="text-xs font-bold uppercase" style="font-size: 17px; color: #D4AF37; font-weight: bold;">Anak Dari</p>
+                            </div>
+                            <h4 class="font-playfair mb-2"; style="color: #c5c4ad;">
+                                Bapak Sambas Andiyanta <br>
+                                Ibu Ratih Choerunnisa
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: EVENT -->
+    <div class="page full-page" id="page-3">
+        <div class="page-bg" style="background: url('assets/images/bg_utama6.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">Rangkaian Acara</h2>
+                <p class="page-subtitle">Harap Hadir dan Berkenan Merayakan Bersama Kami</p>
+            </div>
+
+            <div class="page-body">
+                <!-- Countdown -->
+                <div class="countdown-section mb-4" data-aos="zoom-in">
+                    <h3 class="text-center font-playfair mb-3">
+                        <i class="fas fa-hourglass-end mr-2"></i> Perhitungan Waktu
+                    </h3>
+                    <div class="countdown-container">
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Hari</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Jam</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Menit</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Detik</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="events-grid">
+                    <!-- Hari Rabu -->
+                    <div class="card" data-aos="fade-up">
+                        <div class="card-icon">
+                            <img src="assets/images/Lion.png" class="icon" style="width: 100px; height:100px; object-fit:contain;" alt="Lion">
+                        </div>
+                        <h4 class="font-playfair mb-2">Hiburan Seni Singa</h4>
+                        <div class="event-info">
+                            <p><i class="fas fa-calendar-alt mr-1"></i> Hari Rabu, 06 Mei 2026</p>
+                            <p><i class="fas fa-clock mr-1"></i> Siang - Sore</p>
+                            <p><i class="fas fa-map-marker-alt mr-1"></i> BTN</p>
+                        </div>
+                    </div>
+
+                    <!-- Hari Kamis -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4 class="font-playfair mb-2">Resepsi Khitanan</h4>
+                        <div class="event-info">
+                            <p><i class="fas fa-calendar-alt mr-1"></i> Hari Kamis, 07 Mei 2026</p>
+                            <p><i class="fas fa-clock mr-1"></i> 09:00 WIB - Selesai</p>
+                            <p><i class="fas fa-map-marker-alt mr-1"></i> Kp. Cihonje RT 03/01 Komplek BTN Desa Wargaluyu, Kec. Arjasari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: MAPS -->
+    <div class="page full-page" id="page-4">
+        <div class="page-bg" style="background: url('assets/images/bg_utama7.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">Lokasi Acara</h2>
+                <p class="page-subtitle">Tunjukkan Rute & Informasi Lokasi Lengkap</p>
+            </div>
+
+            <div class="page-body">
+                <div class="maps-container" data-aos="fade-up">
+                    <!-- Single Location Card -->
+                    <div class="card maps-card">
+                        <h4 class="font-playfair mb-2">
+                            <i class="fas fa-hospital-user mr-2"></i> Resepsi Khitanan
+                        </h4>
+
+                        <!-- Maps & QR Code Wrapper -->
+                        <div class="maps-qr-wrapper">
+                            <!-- Maps Embed -->
+                            <div class="map-embed-container">
+                                <iframe width="100%" height="220" style="border:0; border-radius: 0.6rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3959.776262529106!2d107.60090257499762!3d-7.035561992966394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDInMDguMCJTIDEwN8KwMzYnMTIuNSJF!5e0!3m2!1sen!2sid!4v1777294495996!5m2!1sen!2sid"></iframe>
+                            </div>
+
+                            <!-- QR Code Section -->
+                            <div class="qrcode-section">
+                                <h5 class="font-playfair mb-2" style="font-size: 0.85rem; color: var(--gold-light);">
+                                    <i class="fas fa-qrcode mr-1"></i> Barcode
+                                </h5>
+                                <div class="qrcode-container">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/mjw8xMomicF9KZhU9" alt="QR Code Lokasi" class="qrcode-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Info -->
+                        <div class="location-details mt-2">
+                            <h5 class="font-playfair mb-1" style="font-size: 0.85rem; color: var(--gold-light);">
+                                <i class="fas fa-calendar-alt mr-1"></i> Jadwal
+                            </h5>
+                            <p style="font-size: 0.75rem; color: var(--text-primary); margin-bottom: 0.3rem;">
+                                <strong>Hari Kamis, 07 Mei 2026</strong> Pukul <strong>09:00 WIB</strong>
+                            </p>
+
+
+                            <h5 class="font-playfair mb-1" style="font-size: 0.85rem; color: var(--gold-light);">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Alamat
+                            </h5>
+                            <p style="font-size: 0.75rem; color: var(--text-primary); line-height: 1.4;">
+                                Kp. Cihonje RT 03/01 
+                                Komplek BTN Desa Wargaluyu 
+                                Kec. Arjasari
+                            </p>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="button-group mt-2">
+                            <a href="https://maps.app.goo.gl/mjw8xMomicF9KZhU9" target="_blank" class="btn-secondary full-width">
+                                <i class="fas fa-directions"></i> Buka Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+    </div>    
+
+    <!-- PAGE 5A: RSVP PART 1 (COUNTDOWN & STATISTICS) -->
+    <div class="page full-page" id="page-5a">
+        <div class="page-bg" style="background: url('assets/images/bg_utama.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">Konfirmasi Kehadiran</h2>
+                <p class="page-subtitle">Bantu Kami Mempersiapkan Acara</p>
+            </div>
+
+            <div class="page-body rsvp-part1">
+                <!-- Countdown -->
+                <div class="countdown-section mb-3" data-aos="zoom-in">
+                    <h4 class="text-center font-playfair mb-3">
+                        <i class="fas fa-hourglass-end mr-2"></i> Waktu Tersisa
+                    </h4>
+                    <div class="countdown-container">
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="days-rsvp">00</div>
+                            <div class="countdown-label">Hari</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="hours-rsvp">00</div>
+                            <div class="countdown-label">Jam</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="minutes-rsvp">00</div>
+                            <div class="countdown-label">Menit</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="seconds-rsvp">00</div>
+                            <div class="countdown-label">Detik</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div id="guestStats" class="stats-grid mb-4 hidden">
+                    <div class="stat-box">
+                        <div class="stat-number" id="countHadir">0</div>
+                        <div class="stat-label">Akan Hadir</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="countTidakHadir">0</div>
+                        <div class="stat-label">Tidak Hadir</div>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <button onclick="goToPage('5b')" class="btn-primary btn-large full-width">
+                    <i class="fas fa-pen-fancy"></i> Konfirmasi Kehadiran
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5B: RSVP PART 2 (FORM & GUEST LIST) -->
+    <div class="page full-page" id="page-5b">
+        <div class="page-bg" style="background: url('assets/images/bg_utama7.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">Konfirmasi Kehadiran Anda</h2>
+                <p class="page-subtitle">Silakan konfirmasi kehadiran Anda dengan mengisi formulir di bawah ini.</p>
+            </div>
+
+            <div class="page-body rsvp-part2">
+                <!-- RSVP Form -->
+                <div class="card mb-3" data-aos="fade-up">
+                    <form id="rsvpForm" style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div class="form-group">
+                            <label><i class="fas fa-user mr-1"></i> Nama <span style="color: #ef4444;">*</span></label>
+                            <input type="text" id="name" required placeholder="Nama lengkap" maxlength="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt mr-1"></i> Alamat <span style="color: #ef4444;">*</span></label>
+                            <textarea id="address" required placeholder="Alamat Anda" maxlength="200" style="min-height: 70px;"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-check-circle mr-1"></i> Status <span style="color: #ef4444;">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="status" value="Akan Hadir" required>
+                                    <span>Akan Hadir</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="status" value="Tidak Hadir" required>
+                                    <span>Tidak Hadir</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> KIRIM
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Guest List Preview -->
+                <div class="card guest-list-preview">
+                    <h4 class="font-playfair mb-2">
+                        <i class="fas fa-list mr-2"></i> Daftar Tamu (5 Terakhir)
+                    </h4>
+                    <div id="wishContainer" style="max-height: 200px; overflow-y: auto;">
+                        <p class="text-center text-sm" style="color: var(--text-primary); opacity: 0.5; padding: 1rem 0;">Memuat...</p>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <button onclick="goToPage('5a')" class="btn-secondary full-width mt-2">
+                    <i class="fas fa-arrow-up"></i> Kembali
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: GIFT -->
+    <div class="page full-page" id="page-6">
+        <div class="page-bg" style="background: url('assets/images/bg_utama.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">TANDA KASIH</h2>
+            </div>
+
+            <div class="page-body">
+                <div class="gift-container">
+                    <!-- BCA -->
+                    <div class="bank-card" data-aos="fade-up">
+                        <h4 class="font-playfair mb-2">
+                            <i class="fas fa-building mr-2"></i> Bank BCA
+                        </h4>
+                        <div class="bank-info">
+                            <p><strong>Nomor:</strong></p>
+                            <div class="bank-number-display">
+                                <span>2790346885</span>
+                                <button onclick="copyToClipboard('2790346885')" class="copy-btn" title="Salin">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <p><strong style="margin-top: 0.5rem; display: block;">Atas Nama:</strong></p>
+                            <p>RATIH CHOERUNNISA</p>
+                        </div>
+                    </div>
+
+
+                </div><br>
+                <div class="gift-container">
+                                        <!-- BJB -->
+                    <div class="bank-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="font-playfair mb-2">
+                            <i class="fas fa-building mr-2"></i> Bank BJB
+                        </h4>
+                        <div class="bank-info">
+                            <p><strong>Nomor:</strong></p>
+                            <div class="bank-number-display">
+                                <span>0135902934100</span>
+                                <button onclick="copyToClipboard('0135902934100')" class="copy-btn" title="Salin">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <p><strong style="margin-top: 0.5rem; display: block;">Atas Nama:</strong></p>
+                            <p>RATIH CHOERUNNISA</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 7: GALERI -->
+    <div class="page full-page" id="page-7">
+        <div class="page-bg" style="background: url('assets/images/bg_utama7.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+            <div class="page-header" data-aos="fade-down">
+                <h2 class="font-playfair">Momen Berharga</h2>
+                <p class="page-subtitle">Kenang-Kenangan Keluarga Tercinta</p>
+            </div>
+
+            <div class="page-body">
+                <div class="gallery-single" data-aos="zoom-in">
+                    <div class="gallery-item-large" onclick="openGalleryFullscreen('assets/images/profile-child.jpg', 'Diendra Bersama Keluarga Tercinta')">
+                        <img src="assets/images/Foto_Keluarga.jpg" alt="Momen Keluarga">
+
+                    </div>
+                    <p class="gallery-caption">Diendra Bersama Keluarga Tercinta</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN GALLERY MODAL -->
+    <div id="galleryFullscreen" class="gallery-fullscreen hidden">
+        <div class="gallery-fullscreen-content">
+            <button class="gallery-close-btn" onclick="closeGalleryFullscreen()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="galleryFullscreenImg" src="" alt="Fullscreen">
+            <p id="galleryFullscreenCaption" class="gallery-fullscreen-caption"></p>
+        </div>
+    </div>
+
+    <!-- PAGE 8: THANKS -->
+    <div class="page full-page" id="page-8">
+        <div class="page-bg" style="background: url('assets/images/bg_utama7.jpg') center/cover no-repeat fixed;"></div>
+        <div class="page-overlay"></div>
+
+        <div class="page-content thanks-page" style="display: flex; align-items: center; justify-content: center;">
+            <div class="thanks-content" data-aos="zoom-in" style="text-align: center;">
+                <i class="fas fa-heart" style="font-size: 4rem; color: var(--gold-light); animation: float 3s ease-in-out infinite; margin-bottom: 1rem; display: block;"></i>
+                
+                <h2 class="font-playfair mb-3">Terima Kasih</h2>
+                
+                <p style="color: var(--text-primary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    Terima kasih telah meluangkan waktu untuk merayakan momen istimewa kami. Kehadiran dan doa Anda sangat berarti bagi kami.
+                </p>
+
+                <p style="color: var(--gold-light); font-style: italic; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    Wassalamu'alaikum wa Rahmatullahi wa Barakatuh
+                </p>
+
+                <p class="font-islamic" style="margin-bottom: 1.5rem; font-size: 1.2rem;">
+                    الْحَمْدُ لِلَّهِ الَّذِي أَنْزَلَ عَلَيْنَا نِعَمَهُ
+                </p>
+
+                <div style="padding-top: 1.5rem; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                    <p style="color: var(--text-primary); opacity: 0.7; font-size: 0.8rem; margin-bottom: 0.3rem;">
+                        © 2026 @Mihaf_37
+                    </p>
+                    <p style="color: var(--text-primary); opacity: 0.7; font-size: 0.8rem;">
+                        Musik By 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER NAVIGATION (HIDDEN SAAT COVER) -->
+<footer class="footer-nav hidden" id="footerNav">
+    <div class="footer-nav-container" id="footerNavContainer">
+        <button class="footer-btn" onclick="goToPage('1')" data-page="1">
+            <i class="fas fa-home"></i>
+            <span>Cover</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('2')" data-page="2">
+            <i class="fas fa-user"></i>
+            <span>Profil</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('3')" data-page="3">
+            <i class="fas fa-calendar"></i>
+            <span>Event</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('4')" data-page="4">
+            <i class="fas fa-map"></i>
+            <span>Maps</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('5a')" data-page="5a">
+            <i class="fas fa-envelope"></i>
+            <span>RSVP</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('6')" data-page="6">
+            <i class="fas fa-gift"></i>
+            <span>Gift</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('7')" data-page="7">
+            <i class="fas fa-images"></i>
+            <span>Galeri</span>
+        </button>
+        <button class="footer-btn" onclick="goToPage('8')" data-page="8">
+            <i class="fas fa-heart"></i>
+            <span>Thanks</span>
+        </button>
+    </div>
+</footer>
+
+<!-- Floating Controls -->
+<div class="floating-controls hidden" id="controls">
+    <button class="control-btn" onclick="toggleMusic()" title="Musik">
+        <i id="musicIcon" class="fas fa-music"></i>
+    </button>
+    <button class="control-btn" onclick="toggleFullscreen()" title="Fullscreen">
+        <i id="fsIcon" class="fas fa-expand"></i>
+    </button>
+    <button class="control-btn refresh-btn" onclick="refreshGuestData()" title="Refresh">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/countdown.js"></script>
+<script src="assets/js/form.js"></script>
+<script src="assets/js/storage.js"></script>
+
+</body>
+</html>
