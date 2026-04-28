@@ -481,6 +481,7 @@
     background: linear-gradient(90deg, var(--text-primary), var(--gold-light), var(--text-primary));
     background-size: 200% auto;
     animation: shimmer 3s linear infinite;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
