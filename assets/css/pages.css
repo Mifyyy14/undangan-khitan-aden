@@ -108,6 +108,37 @@
     }
 }
 
+/* ===================== PROFILE PART 1 (GREETING) ===================== */
+#page-2a .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+#page-2a .page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: clamp(280px, 90vw, 700px);
+}
+
+#page-2a .page-header h2 {
+    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+}
+
+#page-2a .page-subtitle {
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    line-height: 1.7;
+    margin: 0;
+}
+
 .profile-photo {
     display: flex;
     flex-direction: column;
@@ -119,7 +150,7 @@
 .profile-info {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 2vw, 1.3rem);
+    gap: clamp(0.8rem, 1.5vw, 1rem);
     width: 100%;
     max-width: clamp(280px, 90vw, 350px);
 }
@@ -160,6 +191,102 @@
 .profile-info .card {
     padding: clamp(1rem, 2.2vw, 1.3rem);
     width: 100%;
+}
+
+/* ===================== FAMILY CARDS LAYOUT ===================== */
+.family-cards {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1.5vw, 1.2rem);
+    width: 100%;
+}
+
+.family-card {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 1.2rem);
+    padding: clamp(0.9rem, 1.8vw, 1.2rem) !important;
+}
+
+.family-card .card-icon {
+    width: clamp(50px, 8vw, 70px);
+    height: clamp(50px, 8vw, 70px);
+    flex-shrink: 0;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.family-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.family-card-label {
+    text-transform: uppercase;
+    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+    color: #D4AF37;
+    font-weight: 700;
+    margin: 0 0 clamp(0.3rem, 0.6vw, 0.5rem) 0;
+    letter-spacing: 0.05em;
+}
+
+.family-card h4 {
+    font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+    line-height: 1.5;
+    margin: 0;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .family-cards {
+        gap: 0.9rem;
+    }
+
+    .family-card {
+        gap: 0.9rem;
+        padding: 0.9rem !important;
+    }
+
+    .family-card .card-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .family-card-label {
+        font-size: 0.75rem;
+    }
+
+    .family-card h4 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .family-cards {
+        gap: 0.7rem;
+    }
+
+    .family-card {
+        gap: 0.75rem;
+        padding: 0.75rem !important;
+    }
+
+    .family-card .card-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .family-card-label {
+        font-size: 0.65rem;
+    }
+
+    .family-card h4 {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
 }
 
 /* ===================== EVENT PAGE ===================== */
