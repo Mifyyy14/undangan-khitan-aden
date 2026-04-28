@@ -334,12 +334,14 @@
     justify-content: center;
     height: 100%;
     gap: 1rem;
+    padding: clamp(1rem, 2vw, 2rem);
 }
 
 .gallery-item-large {
     position: relative;
     width: 100%;
-    max-width: 350px;
+    max-width: 90vw;
+    max-height: 75vh;
     aspect-ratio: 4/3;
     border-radius: 1rem;
     overflow: hidden;
@@ -363,7 +365,7 @@
 }
 
 .gallery-item-large:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .gallery-overlay {
@@ -399,6 +401,41 @@
     color: rgba(212, 175, 55, 0.6);
     margin-top: 0.5rem;
     text-align: center;
+}
+
+/* ===================== RESPONSIVE GALLERY SINGLE ===================== */
+@media (max-width: 768px) {
+    .gallery-single {
+        padding: 1rem;
+    }
+
+    .gallery-item-large {
+        max-width: 95vw;
+        max-height: 60vh;
+    }
+
+    .gallery-caption {
+        font-size: 0.85rem;
+    }
+
+    .gallery-hint {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item-large {
+        max-width: 100%;
+        max-height: 50vh;
+    }
+
+    .gallery-overlay i {
+        font-size: 2rem;
+    }
+
+    .gallery-caption {
+        font-size: 0.8rem;
+    }
 }
 
 /* ===================== GALLERY FULLSCREEN MODAL ===================== */
@@ -513,7 +550,7 @@
 
 /* ===================== RSVP PAGE ===================== */
 .rsvp-part1 {
-    justify-content: center;
+    justify-content: center; margin-bottom: 8.5rem;
 }
 
 .rsvp-part2 {
