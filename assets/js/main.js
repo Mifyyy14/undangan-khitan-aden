@@ -6,6 +6,26 @@ AOS.init({
     offset: 20
 });
 
+// ===================== STATE MANAGEMENT =====================
+let invitationState = 'cover'; // 'cover' atau 'fullscreen'
+
+function setInvitationState(state) {
+    invitationState = state;
+    
+    if (state === 'cover') {
+        document.body.classList.remove('state-fullscreen');
+        document.body.classList.add('state-cover');
+    } else if (state === 'fullscreen') {
+        document.body.classList.remove('state-cover');
+        document.body.classList.add('state-fullscreen');
+    }
+    
+    // Trigger AOS refresh
+    setTimeout(() => {
+        AOS.refresh();
+    }, 100);
+}
+
 // ===================== GLOBAL VARIABLES =====================
 const bgMusic = document.getElementById('bgMusic');
 const musicIcon = document.getElementById('musicIcon');
@@ -18,16 +38,18 @@ let invitationStarted = false;
 
 // ===================== PAGE LOAD =====================
 window.addEventListener('load', () => {
+    setInvitationState('cover');
     loadWishes();
 });
 
 // ===================== START INVITATION =====================
 function startInvitation() {
+    setInvitationState('fullscreen');
     bgMusic.play().catch(() => {});
     controls.classList.remove('hidden');
-    footerNav.classList.remove('hidden');  // MUNCUL SETELAH BUKA UNDANGAN
+    footerNav.classList.remove('hidden');
     invitationStarted = true;
-    goToPage('2');
+    goToPage('2a');
 }
 
 // ===================== GO TO PAGE =====================
@@ -53,20 +75,25 @@ function goToPage(pageId) {
         activeBtn.classList.add('active');
     }
 
-    // UPDATE FOOTER VISIBILITY BERDASARKAN HALAMAN
-    const footerNav = document.getElementById('footerNav');
-    const pagesWrapper = document.querySelector('.pages-wrapper');
-    
+    // Handle state berdasarkan page
     if (pageId === '1') {
-        // COVER PAGE - SEMBUNYIKAN FOOTER
+        setInvitationState('cover');
         footerNav.classList.add('hidden');
-        pagesWrapper.style.paddingBottom = '0';
+        controls.classList.add('hidden');
     } else {
-        // HALAMAN LAIN - TAMPILKAN FOOTER
-        if (invitationStarted) {
-            footerNav.classList.remove('hidden');
-            pagesWrapper.style.paddingBottom = '70px';
-        }
+        setInvitationState('fullscreen');
+    }
+
+    // Clear any existing auto-redirect timeout
+    if (window.pageRedirectTimeout) {
+        clearTimeout(window.pageRedirectTimeout);
+    }
+
+    // Auto-redirect from page-2a to page-2b after 3 seconds
+    if (pageId === '2a') {
+        window.pageRedirectTimeout = setTimeout(() => {
+            goToPage('2b');
+        }, 5000);
     }
 
     // Refresh AOS
@@ -82,8 +109,6 @@ function goToPage(pageId) {
 function autoScrollFooterNav(pageId) {
     const container = document.getElementById('footerNavContainer');
     const buttons = document.querySelectorAll('.footer-btn');
-    const pageNum = parseInt(pageId.replace(/[a-z]/g, ''));
-    const visibleButtons = window.innerWidth > 768 ? 8 : 5;
 
     let targetButton = null;
     buttons.forEach(btn => {
@@ -93,6 +118,7 @@ function autoScrollFooterNav(pageId) {
     });
 
     if (targetButton && window.innerWidth <= 768) {
+        const visibleButtons = 5;
         const buttonIndex = Array.from(buttons).indexOf(targetButton);
         if (buttonIndex >= visibleButtons - 1) {
             container.scrollLeft = (buttonIndex - visibleButtons + 2) * targetButton.offsetWidth;
@@ -236,7 +262,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Close fullscreen saat klik di luar gambar
-document.getElementById('galleryFullscreen').addEventListener('click', function(e) {
+document.getElementById('galleryFullscreen')?.addEventListener('click', function(e) {
     if (e.target === this) {
         closeGalleryFullscreen();
     }
