@@ -32,23 +32,24 @@
 .opening-profile {
     position: relative;
     z-index: 3;
-    margin-bottom: clamp(0.8rem, 3vw, 1.5rem);
+    margin: clamp(1.2rem, 3vw, 1.8rem) 0;
+    display: flex;
+    justify-content: center;
 }
 
 .profile-circle {
-    width: clamp(100px, 22vw, 180px);
-    height: clamp(100px, 22vw, 180px);
+    width: clamp(130px, 32vw, 200px);
+    height: clamp(130px, 32vw, 200px);
     border-radius: 50%;
-    border: clamp(2px, 0.8vw, 4px) solid var(--gold-light);
+    border: clamp(3px, 0.8vw, 5px) solid var(--gold-light);
     overflow: hidden;
-    margin: 0 auto;
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
     transition: all 0.4s ease;
 }
 
 .profile-circle:hover {
     transform: scale(1.05);
-    box-shadow: 0 25px 60px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 25px 60px rgba(212, 175, 55, 0.5);
 }
 
 .profile-circle img {
@@ -61,55 +62,81 @@
     position: relative;
     z-index: 3;
     text-align: center;
-    max-width: 90%;
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
-    max-height: 70vh;
-    overflow-y: auto;
+    width: 100%;
+    max-width: clamp(300px, 95vw, 700px);
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2.2vw, 1.6rem);
+    align-items: center;
+    justify-content: center;
 }
 
 .opening-greeting {
     color: var(--text-primary);
-    margin: clamp(0.6rem, 2vw, 1rem) 0;
-    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
     letter-spacing: 0.1em;
+    font-weight: 500;
 }
 
 .opening-desc {
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     opacity: 0.9;
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
-    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 400;
 }
 
 /* ===================== PROFILE PAGE ===================== */
 .profile-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 45vw, 280px), 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: clamp(1.2rem, 2.5vw, 2rem);
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
 }
 
-.profile-photo,
+@media (min-width: 1000px) {
+    .profile-grid {
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+        align-items: flex-start;
+    }
+}
+
+.profile-photo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: clamp(280px, 90vw, 350px);
+}
+
 .profile-info {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.8rem, 2vw, 1.2rem);
+    gap: clamp(1rem, 2vw, 1.3rem);
+    width: 100%;
+    max-width: clamp(280px, 90vw, 350px);
 }
 
 .profile-frame {
     width: 100%;
     aspect-ratio: 4/3;
-    border-radius: clamp(0.6rem, 2vw, 1rem);
+    border-radius: clamp(1rem, 1.8vw, 1.2rem);
     overflow: hidden;
-    border: clamp(1px, 0.5vw, 2px) solid rgba(212, 175, 55, 0.3);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    border: clamp(2px, 0.6vw, 3px) solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
     transition: all 0.3s ease;
 }
 
 .profile-frame:hover {
     border-color: var(--gold-light);
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.35);
 }
 
 .profile-frame img {
@@ -124,133 +151,160 @@
 }
 
 .profile-info h3 {
-    font-size: clamp(1rem, 4vw, 1.6rem);
-    margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+    font-size: clamp(1.2rem, 3.8vw, 1.7rem);
+    margin: 0 0 clamp(1rem, 1.5vw, 1.2rem) 0;
+    text-align: center;
+    line-height: 1.3;
 }
 
 .profile-info .card {
-    padding: clamp(0.6rem, 2vw, 1rem);
+    padding: clamp(1rem, 2.2vw, 1.3rem);
+    width: 100%;
 }
 
 /* ===================== EVENT PAGE ===================== */
 .countdown-section {
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: clamp(0.6rem, 1.5vw, 1rem);
-    padding: clamp(0.8rem, 2.5vw, 1.5rem);
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: clamp(0.8rem, 1.5vw, 1.1rem);
+    padding: clamp(1.2rem, 2.5vw, 1.6rem);
+    margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
 }
 
 .countdown-section h3 {
-    font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+    font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+    margin: 0 0 clamp(1rem, 2vw, 1.3rem) 0;
 }
 
 .countdown-section h4 {
-    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    margin: 0 0 clamp(1rem, 2vw, 1.3rem) 0;
 }
 
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 45vw, 280px), 1fr));
-    gap: clamp(0.8rem, 2.5vw, 1.5rem);
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 2vw, 1.4rem);
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
+}
+
+@media (min-width: 800px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.2rem, 2vw, 1.6rem);
+    }
 }
 
 .event-info {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.3rem, 0.8vw, 0.5rem);
+    gap: clamp(0.5rem, 0.9vw, 0.7rem);
 }
 
 .event-info p {
-    font-size: clamp(0.75rem, 1.6vw, 0.9rem);
-    margin-bottom: clamp(0.2rem, 0.5vw, 0.3rem);
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    margin: 0;
     color: var(--text-primary);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .event-info i {
     color: var(--gold-primary);
-    width: clamp(0.8rem, 1.5vw, 1rem);
-    text-align: center;
-    margin-right: clamp(0.3rem, 0.8vw, 0.5rem);
+    width: clamp(0.85rem, 1.6vw, 1rem);
+    margin-right: clamp(0.4rem, 0.9vw, 0.6rem);
 }
 
 /* ===================== MAPS PAGE ===================== */
 .maps-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100%;
     width: 100%;
 }
 
 .maps-card {
     width: 100%;
-    max-width: clamp(280px, 90vw, 600px);
-    padding: clamp(0.8rem, 2vw, 1.2rem);
+    max-width: clamp(300px, 95vw, 750px);
+    padding: clamp(1.2rem, 2.5vw, 1.6rem);
     display: flex;
     flex-direction: column;
-    gap: clamp(0.6rem, 1.5vw, 1rem);
+    gap: clamp(1rem, 2vw, 1.4rem);
 }
 
 .maps-card h4 {
-    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
-    margin-bottom: clamp(0.4rem, 1vw, 0.6rem);
+    font-size: clamp(1.1rem, 2.6vw, 1.25rem);
+    margin: 0 0 clamp(0.8rem, 1.4vw, 1rem) 0;
+    text-align: center;
 }
 
 .maps-qr-wrapper {
     display: grid;
-    grid-template-columns: 1fr 160px;
-    gap: clamp(0.6rem, 1.5vw, 0.8rem);
+    grid-template-columns: 1fr;
+    gap: clamp(0.9rem, 2vw, 1.3rem);
     align-items: flex-start;
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .maps-qr-wrapper {
+        grid-template-columns: 1fr 180px;
+        gap: clamp(1rem, 1.8vw, 1.2rem);
+    }
 }
 
 .map-embed-container {
     width: 100%;
-    border-radius: clamp(0.4rem, 1vw, 0.7rem);
+    border-radius: clamp(0.8rem, 1.5vw, 1rem);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
 }
 
 .map-embed-container iframe {
     display: block;
     width: 100%;
-    height: clamp(150px, 35vw, 220px);
+    height: clamp(200px, 40vw, 260px);
 }
 
 .location-details {
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: clamp(0.4rem, 1vw, 0.6rem);
-    padding: clamp(0.6rem, 1.5vw, 0.8rem);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: clamp(0.6rem, 1.2vw, 0.85rem);
+    padding: clamp(0.9rem, 1.8vw, 1.1rem);
+    width: 100%;
 }
 
 .location-details h5 {
-    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+    font-size: clamp(0.8rem, 1.6vw, 0.95rem);
     font-weight: 700;
-    margin-bottom: clamp(0.3rem, 0.8vw, 0.4rem);
+    margin: 0 0 clamp(0.5rem, 0.9vw, 0.7rem) 0;
 }
 
 .location-details p {
-    font-size: clamp(0.7rem, 1.4vw, 0.8rem);
-    line-height: 1.3;
-    margin: clamp(0.2rem, 0.5vw, 0.3rem) 0;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    line-height: 1.4;
+    margin: clamp(0.3rem, 0.5vw, 0.4rem) 0;
+    color: var(--text-primary);
 }
 
 /* ===================== QRCODE SECTION ===================== */
 .qrcode-section {
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: clamp(0.4rem, 1vw, 0.6rem);
-    padding: clamp(0.6rem, 1.5vw, 0.8rem);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: clamp(0.6rem, 1.2vw, 0.85rem);
+    padding: clamp(0.9rem, 2vw, 1.1rem);
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: clamp(0.4rem, 1vw, 0.5rem);
+    gap: clamp(0.7rem, 1.3vw, 0.9rem);
+    width: 100%;
 }
 
 .qrcode-section h5 {
-    font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
     font-weight: 700;
     margin: 0;
 }
@@ -258,180 +312,178 @@
 .qrcode-container {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: clamp(0.4rem, 1vw, 0.6rem);
-    border-radius: clamp(0.3rem, 0.8vw, 0.4rem);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    padding: clamp(0.7rem, 1.3vw, 0.9rem);
+    border-radius: clamp(0.4rem, 1vw, 0.6rem);
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .qrcode-img {
-    width: clamp(100px, 22vw, 150px);
-    height: clamp(100px, 22vw, 150px);
+    width: clamp(110px, 22vw, 150px);
+    height: clamp(110px, 22vw, 150px);
     display: block;
 }
 
 .button-group {
     display: flex;
-    gap: clamp(0.6rem, 1.5vw, 0.8rem);
+    gap: clamp(0.8rem, 1.6vw, 1rem);
     flex-wrap: wrap;
-    margin-top: clamp(0.6rem, 1vw, 1rem);
+    margin-top: clamp(0.8rem, 1.5vw, 1.1rem);
+    justify-content: center;
 }
 
 .button-group .btn-secondary {
-    flex: 1;
-    min-width: clamp(120px, 35vw, 200px);
-    padding: clamp(0.5rem, 1.2vw, 0.7rem) clamp(0.8rem, 2vw, 1.2rem);
-    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    flex: 1 1 auto;
+    min-width: clamp(140px, 40vw, 200px);
+    padding: clamp(0.7rem, 1.3vw, 0.85rem) clamp(1rem, 2.2vw, 1.4rem);
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
 }
 
-/* ===================== RESPONSIVE MAPS ===================== */
-@media (max-width: 920px) {
-    .maps-qr-wrapper {
-        grid-template-columns: 1fr;
-        gap: clamp(0.5rem, 1.2vw, 0.8rem);
-    }
-
-    .map-embed-container iframe {
-        height: clamp(140px, 30vw, 200px);
-    }
-
-    .qrcode-img {
-        width: clamp(90px, 20vw, 130px);
-        height: clamp(90px, 20vw, 130px);
-    }
-}
-
-@media (max-width: 600px) {
-    .maps-card {
-        padding: clamp(0.6rem, 1.5vw, 1rem);
-    }
-
-    .maps-qr-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .map-embed-container iframe {
-        height: clamp(120px, 25vh, 180px);
-    }
-
-    .qrcode-img {
-        width: clamp(80px, 18vw, 110px);
-        height: clamp(80px, 18vw, 110px);
-    }
-
-    .qrcode-section h5 {
-        font-size: clamp(0.65rem, 1.2vw, 0.75rem);
-    }
-}
-
-/* ===================== RSVP PAGE ===================== */
+/* ===================== RSVP PAGE - PART 1 ===================== */
 .rsvp-part1 {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding-bottom: clamp(1rem, 2vw, 2rem);
+    align-items: center;
+    gap: clamp(1.4rem, 2.8vw, 2rem);
+    padding-bottom: clamp(1.4rem, 2.8vw, 2rem);
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
 }
 
+.countdown-section {
+    width: 100%;
+}
+
+.stats-grid {
+    width: 100%;
+}
+
+/* ===================== RSVP PAGE - PART 2 ===================== */
 .rsvp-part2 {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 1.3rem);
     overflow-y: auto;
-    padding-bottom: clamp(1rem, 2vw, 2rem);
+    padding-bottom: clamp(1.4rem, 2.8vw, 2rem);
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
 }
 
 .rsvp-part2 .card {
-    margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+    width: 100%;
+    margin-bottom: clamp(1rem, 1.8vw, 1.3rem);
 }
 
 .guest-list-preview {
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    max-height: clamp(200px, 35vh, 400px);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    width: 100%;
+    max-height: clamp(250px, 35vh, 400px);
     overflow-y: auto;
 }
 
 .wish-item {
-    background: rgba(255, 255, 255, 0.02);
-    border-left: clamp(2px, 0.5vw, 3px) solid var(--gold-primary);
-    border-radius: clamp(0.3rem, 0.8vw, 0.5rem);
-    padding: clamp(0.5rem, 1.2vw, 0.8rem);
-    margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
+    background: rgba(255, 255, 255, 0.03);
+    border-left: clamp(3px, 0.6vw, 4px) solid var(--gold-primary);
+    border-radius: clamp(0.5rem, 0.9vw, 0.65rem);
+    padding: clamp(0.8rem, 1.6vw, 1rem);
+    margin-bottom: clamp(0.6rem, 1vw, 0.8rem);
     animation: fadeInUp 0.5s ease-out;
     transition: all 0.3s ease;
 }
 
 .wish-item:hover {
     border-left-color: var(--gold-light);
-    transform: translateX(2px);
+    transform: translateX(3px);
 }
 
 .wish-name {
     font-weight: 700;
     color: var(--gold-light);
-    font-size: clamp(0.75rem, 1.6vw, 0.9rem);
-    margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem);
+    font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+    margin-bottom: clamp(0.3rem, 0.6vw, 0.4rem);
 }
 
 .wish-status {
     display: inline-block;
-    font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
     font-weight: 600;
     text-transform: uppercase;
-    padding: clamp(0.15rem, 0.4vw, 0.25rem) clamp(0.4rem, 0.8vw, 0.6rem);
+    padding: clamp(0.2rem, 0.5vw, 0.3rem) clamp(0.5rem, 0.9vw, 0.7rem);
     border-radius: 50px;
-    margin-bottom: clamp(0.2rem, 0.5vw, 0.3rem);
+    margin-bottom: clamp(0.3rem, 0.7vw, 0.5rem);
+    letter-spacing: 0.04em;
 }
 
 .wish-text {
     color: var(--text-primary);
-    font-size: clamp(0.7rem, 1.4vw, 0.85rem);
-    opacity: 0.8;
-    line-height: 1.3;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    opacity: 0.85;
+    line-height: 1.4;
 }
 
 /* ===================== GIFT PAGE ===================== */
 .gift-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 45vw, 250px), 1fr));
-    gap: clamp(0.8rem, 2vw, 1.2rem);
-    margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+    grid-template-columns: 1fr;
+    gap: clamp(1.2rem, 2.2vw, 1.6rem);
+    margin-bottom: clamp(1rem, 2vw, 1.4rem);
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
+}
+
+@media (min-width: 800px) {
+    .gift-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .bank-card {
     background: rgba(212, 175, 55, 0.08);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: clamp(0.6rem, 1.5vw, 0.9rem);
-    padding: clamp(0.8rem, 2vw, 1.2rem);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    border-radius: clamp(0.8rem, 1.5vw, 1rem);
+    padding: clamp(1.2rem, 2.2vw, 1.4rem);
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .bank-card:hover {
     border-color: var(--gold-light);
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+    transform: translateY(-4px);
 }
 
 .bank-card h4 {
-    font-size: clamp(0.85rem, 2vw, 1rem);
-    margin-bottom: clamp(0.6rem, 1.5vw, 0.8rem);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    margin: 0 0 clamp(0.8rem, 1.4vw, 1rem) 0;
+    text-align: center;
 }
 
 .bank-info {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.3rem, 0.8vw, 0.5rem);
+    gap: clamp(0.5rem, 0.9vw, 0.7rem);
 }
 
 .bank-info p {
-    font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
     color: var(--text-primary);
+    margin: 0;
 }
 
 .bank-number-display {
     display: flex;
     align-items: center;
-    gap: clamp(0.3rem, 0.8vw, 0.5rem);
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: clamp(0.3rem, 0.8vw, 0.5rem);
-    padding: clamp(0.4rem, 1vw, 0.6rem);
-    margin: clamp(0.3rem, 0.6vw, 0.5rem) 0;
+    justify-content: center;
+    gap: clamp(0.5rem, 0.9vw, 0.7rem);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: clamp(0.5rem, 1vw, 0.65rem);
+    padding: clamp(0.7rem, 1.4vw, 0.9rem);
+    margin: clamp(0.4rem, 0.7vw, 0.6rem) 0;
     flex-wrap: wrap;
 }
 
@@ -439,10 +491,8 @@
     font-family: 'Courier New', monospace;
     color: var(--gold-light);
     font-weight: 700;
-    font-size: clamp(0.7rem, 1.4vw, 0.85rem);
-    flex: 1;
+    font-size: clamp(0.75rem, 1.6vw, 0.9rem);
     word-break: break-all;
-    min-width: 80px;
 }
 
 .copy-btn {
@@ -450,20 +500,20 @@
     color: #0F0F0F;
     border: none;
     border-radius: 50%;
-    width: clamp(24px, 5vw, 32px);
-    height: clamp(24px, 5vw, 32px);
+    width: clamp(32px, 5.5vw, 40px);
+    height: clamp(32px, 5.5vw, 40px);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
     flex-shrink: 0;
 }
 
 .copy-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
 }
 
 /* ===================== GALLERY PAGE ===================== */
@@ -473,27 +523,29 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    gap: clamp(0.8rem, 2vw, 1.5rem);
-    padding: clamp(0.8rem, 2vw, 1.5rem) 0;
+    gap: clamp(1.2rem, 2.2vw, 1.8rem);
+    padding: clamp(1.2rem, 2.5vw, 1.8rem) 0;
+    width: 100%;
+    max-width: clamp(300px, 95vw, 800px);
 }
 
 .gallery-item-large {
     position: relative;
     width: 100%;
-    max-width: clamp(280px, 85vw, 400px);
+    max-width: clamp(280px, 85vw, 450px);
     aspect-ratio: 4/3;
-    border-radius: clamp(0.8rem, 2vw, 1.2rem);
+    border-radius: clamp(1rem, 1.8vw, 1.2rem);
     overflow: hidden;
-    border: clamp(1px, 0.5vw, 2px) solid rgba(212, 175, 55, 0.3);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+    border: clamp(2px, 0.6vw, 3px) solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 18px 45px rgba(212, 175, 55, 0.28);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .gallery-item-large:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     border-color: var(--gold-light);
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.35);
+    box-shadow: 0 25px 55px rgba(212, 175, 55, 0.4);
 }
 
 .gallery-item-large img {
@@ -524,30 +576,31 @@
 
 .gallery-overlay i {
     color: var(--gold-light);
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: clamp(2rem, 5.5vw, 3rem);
 }
 
 .gallery-caption {
     text-align: center;
     color: var(--text-primary);
-    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-style: italic;
-    opacity: 0.8;
-    margin-top: clamp(0.3rem, 0.8vw, 0.5rem);
+    opacity: 0.85;
+    font-weight: 500;
+    margin: 0;
 }
 
 .gallery-hint {
-    font-size: clamp(0.65rem, 1.3vw, 0.8rem);
-    color: rgba(212, 175, 55, 0.6);
-    margin-top: clamp(0.3rem, 0.6vw, 0.5rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    color: rgba(212, 175, 55, 0.65);
     text-align: center;
+    margin: 0;
 }
 
 /* ===================== GALLERY FULLSCREEN ===================== */
 .gallery-fullscreen {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.97);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -570,52 +623,66 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: clamp(1rem, 3vw, 2.5rem);
+    padding: clamp(1.2rem, 2.5vw, 2.2rem);
 }
 
 #galleryFullscreenImg {
-    max-width: 90vw;
-    max-height: 75vh;
+    max-width: 95vw;
+    max-height: 85vh;
     object-fit: contain;
-    border-radius: clamp(0.6rem, 1.5vw, 1rem);
-    animation: zoomIn 0.3s ease-out;
+    border-radius: clamp(0.8rem, 1.5vw, 1rem);
+    animation: zoomIn 0.4s ease-out;
 }
 
 .gallery-close-btn {
     position: absolute;
-    top: clamp(0.8rem, 2vw, 1.5rem);
-    right: clamp(0.8rem, 2vw, 1.5rem);
-    width: clamp(2.2rem, 8vw, 3.2rem);
-    height: clamp(2.2rem, 8vw, 3.2rem);
+    top: clamp(1rem, 2vw, 1.6rem);
+    right: clamp(1rem, 2vw, 1.6rem);
+    width: clamp(2.8rem, 8vw, 3.6rem);
+    height: clamp(2.8rem, 8vw, 3.6rem);
     background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
     color: #0F0F0F;
     border: none;
     border-radius: 50%;
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 2001;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
 }
 
 .gallery-close-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    transform: scale(1.15);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.45);
 }
 
 .gallery-fullscreen-caption {
     color: var(--text-primary);
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    margin-top: clamp(1rem, 2.5vw, 1.8rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-top: clamp(1.2rem, 2.2vw, 1.8rem);
     text-align: center;
     font-style: italic;
-    max-width: 90vw;
+    max-width: 95vw;
+    font-weight: 500;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* ===================== THANKS PAGE ===================== */
 .thanks-page {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -624,20 +691,28 @@
     position: relative;
     z-index: 3;
     text-align: center;
-    max-width: clamp(260px, 90vw, 600px);
-    padding: clamp(1rem, 2vw, 2.5rem);
+    width: 100%;
+    max-width: clamp(300px, 95vw, 700px);
+    padding: clamp(1.4rem, 2.5vw, 2.2rem);
     max-height: 90vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.9rem, 1.8vw, 1.4rem);
+    align-items: center;
+}
+
+.thanks-content i {
+    font-size: clamp(3.2rem, 7.5vw, 4.2rem);
 }
 
 .thanks-content h2 {
-    font-size: clamp(1.4rem, 5vw, 2.2rem);
-    margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    margin: 0;
 }
 
 .thanks-content p {
-    color: var(--text-primary);
-    font-size: clamp(0.8rem, 1.8vw, 1rem);
-    line-height: 1.6;
-    margin: clamp(0.6rem, 1.2vw, 1rem) 0;
+    font-size: clamp(0.9rem, 1.9vw, 1.05rem);
+    line-height: 1.7;
+    margin: 0;
 }
