@@ -93,7 +93,7 @@ function goToPage(pageId) {
     if (pageId === '2a') {
         window.pageRedirectTimeout = setTimeout(() => {
             goToPage('2b');
-        }, 5000);
+        }, 3000);
     }
 
     // Refresh AOS
